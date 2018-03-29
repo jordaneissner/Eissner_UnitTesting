@@ -1,0 +1,12 @@
+---
+title: "Tests"
+author: "Jordan Eissner"
+date: "March 28, 2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
