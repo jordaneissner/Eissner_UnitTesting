@@ -3,16 +3,17 @@
 # A student's t-test is used to answer these questions
 #
 # ARGS
-# cloud:     data frame containing all cloud properties of each regime
+# x:        The x values used in the test
+# y:        The y values used in the test
 # 
 #
 # OUTPUT 
-# ttest:      the p-squared values of the t-test 
+# ttest:    The p-squared values of the t-test 
 
 
-T_test <- function(cloud)
+T_test <- function(x,y)
 {
   
   
-  
+  return(ttest)
 }

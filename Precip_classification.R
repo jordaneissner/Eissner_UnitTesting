@@ -16,5 +16,5 @@ Precip_Classification <- function(cloud)
 {
   
   
-  
+  return(list(shallow_precip, shallow_noprecip, congestus_precip, congestus_noprecip))
 }

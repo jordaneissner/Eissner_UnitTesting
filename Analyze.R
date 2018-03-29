@@ -15,5 +15,5 @@ Analyze <- function(x,y)
 {
   
   
-  
+  return(Rsqr)
 }

@@ -10,3 +10,123 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
+## Tests for Cloud_classification 
+
+```{r cloud_class_source, echo=TRUE}
+source("Cloud_classification.R")
+```
+
+See if the function is classifying the right clouds
+
+```{r cloud_test, echo=TRUE}
+CTH <- c(2600,3750,5500,9050,6000,1550)
+CBH <- c(2000,300,2000,250,400,800)
+
+data <- cbind(CTH,CBH)
+
+h <- Cloud_classification(data)$shallow
+i <- Cloud_classification(data)$congestus
+
+for (x in h){
+if (x > 4000)
+{
+  print("passed")
+} else
+{
+  print("failed")
+}}
+
+for (x in i){
+if (x > 5000 && x < 9000)
+{
+  print("passed")
+} else
+{
+  print("failed")
+}}
+```
+
+## Tests for Precip_classification
+
+```{r precip_class_source, echo=TRUE}
+source("Precip_classification.R")
+```
+ See if the function is correctly classifying the precipitation and creating the right four regimes. 
+ 
+```{r precip_test, echo=TRUE}
+CTH <- c(2600,3750,5500,9050,6000,1550)
+CBH <- c(2000,300,2000,250,400,800)
+
+data <- cbind(CTH,CBH)
+
+h <- Precip_classification(data)$shallow_precip
+i <- Precip_classification(data)$shallow_noprecip
+j <- Precip_classification(data)$congestus_precip
+k <- Precip_classification(data)$congestus_noprecip
+
+for (x in h){
+if (x < 500)
+{
+  print("passed")
+} else
+{
+  print("failed")
+}}
+
+for (x in i){
+if (x > 500)
+{
+  print("passed")
+} else
+{
+  print("failed")
+}}
+```
+ 
+
+## Tests for analysis
+```{r analysis_source, echo=TRUE}
+source("Analyze.R")
+```
+
+### $R^2$
+See if the function is correctly calculating $R^2$ values. 
+
+```{r analysis_test, echo=TRUE}
+
+x <- c(1,2,3,4,5)
+y <- c(1,2,3,4,5)
+
+R <- Analyze(x,y)
+
+if (R==1)
+{
+  print("passed")
+} else
+{
+  print("failed")
+}
+```
+
+
+### T test
+```{r ttest_source, echo=TRUE}
+source("T-test.R")
+```
+
+See if the function is correctly calculating p-values from the t-test.
+```{r ttest_test, echo=TRUE}
+
+x <- c(1,2,3,4,5)
+y <- c(1,2,3,4,5)
+
+P <- T_test(x,y)
+
+if (P==1)
+{
+  print("passed")
+} else
+{
+  print("failed")
+}
+```
