@@ -3,15 +3,15 @@
 # and ER vs thickness for all regimes and calculating R^2. 
 #
 # ARGS
-# cloud:     data frame containing all cloud properties of each regime
-# 
+# x:        The x values used in the plot and correlation
+# y:        The y values used in the plot and correlation
 #
 # OUTPUT 
-# The R^2 values of entrainment correlations with each predicted dependency for each regime.
+# Rsqr:     The R^2 values of entrainment correlations with each predicted dependency for each regime.
 # If all regimes are run, there should be a total of 8 values outputted. 
 
 
-Analyze <- function(cloud)
+Analyze <- function(x,y)
 {
   
   

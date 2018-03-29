@@ -4,7 +4,7 @@ author: "Jordan Eissner"
 date: "March 28, 2018"
 output:
   html_document:
-    df_print: paged
+    df_print: kable
 ---
 
 ```{r setup, include=FALSE}
@@ -30,6 +30,33 @@ The entrainment rate is calculated, using observations, with a simple "entrainin
 
 ## Preliminary Results
 
+```{r table, echo=F}
+
+# source("Cloud_classification")
+# source("Precip_classification")
+
+# shal_p <- len()
+# shal_np <- len()
+# cong_p <- len()
+# cong_np <- len()
+
+# shal <- c(paste("shallow, precip - ", shal_p), paste("shallow, no precip - ", shal_np))
+# cong <- c(paste("congestus, precip - ", cong_p), paste("congestus, no precip - ", cong_np))
+
+shal <- c("shallow, precip", "shallow, no precip")
+cong <- c("congestus, precip", "congestus, no precip")
+
+rows <- c("CBH < 100m", "CBH > 100m")
+
+newTable <- data.frame(shal=shal,
+                       cong=cong)
+
+row.names(newTable) <- c("CBH < 100m", "CBH > 100m")
+
+knitr::kable(newTable,
+             col.names = c("CTH 0-4km", "CTH 5-9km"),
+             row.names = TRUE,
+             caption = "Table 1: Convective cloud regimes and how many of each occur during the campaign")
 
 
-
+```
