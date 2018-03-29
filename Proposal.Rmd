@@ -2,19 +2,34 @@
 title: "Proposal"
 author: "Jordan Eissner"
 date: "March 28, 2018"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+# Entrainment in Shallow Cumulus and Congestus During GoAmazon 2014/5
 
 ## Introduction
+
+Convective type clouds occur often near the equator. The Green Ocean Amazon 2014-2015 campaign included the deployment of several Atmospheric Radiation Measurement (ARM) instruments in Manacapuru, Brazil. This site was chosen due to its location close to the Intertropical Convergence Zone (ITCZ), making convective clouds and precipitation prevalent. The two types of convective clouds focused on in this study are shallow cumulus, with cloud top heights (CTH) between 0 and 4 km and cumulus congestus, with CTH between 5 and 9  km. The overarching goals of this project are to find the affects that precipitation has on the growth of each type of cloud and their entrainment (or lateral mixing of environmental air into the cloud) rates. Do entrainment rates vary across the two different convective cloud regimes? 
 
 
 ## Data and Methods
 
+The Green Ocean Amazon 2014/2015 (GoAmazon) campaign included the deployment of DOE's Atmospheric Radiation Measurement (ARM) Mobile Facility at Manacapuru, Maunus, Brazil from January 2014 through December 2015. The W-band ARM Cloud Radar (WACR), a radar with high sensitivity to small cloud particles, took continuous data of the vertical profile of clouds as they advected over the site. Using the WACR reflectivities and Doppler velocities, cloud properties, including cloud base heights, CTH, and vertical velocities can be found.  This cloud information will be used to separate each cloud observed into the correct regime. Each regime and their determinant properties are listed in Table 1 and examples of radar images of each are plotted in Figure 1. A total of 792 clouds were identified during the campaign. 
+
+
+
+
+
+	
+The entrainment rate is calculated, using observations, with a simple "entraining plume" model, which will use the CTH to estimate the entrainment rate for each of the clouds in the study. This entrainment rate will then be used to find possible correlations with relative humidity and cloud thickness. Plots and $R^2$ calculations will be shown to find possible correlations and compare the results of each regime. A student's t-test will also be done to see if the entrainment rate differences for each regime are significant. 
 
 ## Preliminary Results
+
+
 
 
