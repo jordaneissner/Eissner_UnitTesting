@@ -11,15 +11,23 @@
 # shallow - ER, CTH, CBH, thickness, RH
 # congestus - ER, CTH, CBH, thickness, RH
 
+
 ImportData <- function(file)
 {
-  
+  data <- read.csv(file, header=FALSE)
+  colnames(data)<-c("ER", "RH", "CTH", "CBH", "depth")
   return(data)
 }
+data <- ImportData("cloud_data_all.csv")
 
 Cloud_Classification <- function(data)
 {
-  
-  return(list(shallow, congestus))
+  shallow <- data[data$CTH < 4000.0,]
+  congestus <- data[data$CTH > 5000 & data$CTH < 9000,]
+  return(list(shallow=shallow, congestus=congestus))
 }
+
+shallow_cloud <- Cloud_Classification(data)$shallow
+congestus_cloud <- Cloud_Classification(data)$congestus
+
 
