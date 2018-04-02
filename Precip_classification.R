@@ -6,15 +6,16 @@
 # 
 #
 # OUTPUT - four data frames, each containing all of the cloud properties of the four regimes
-# shallow_precip - ER, CTH, CBH, thickness, RH
-# shallow_noprecip - ER, CTH, CBH, thickness, RH
-# congestus_precip - ER, CTH, CBH, thickness, RH
-# congestus_noprecip - ER, CTH, CBH, thickness, RH
+# precip - ER, CTH, CBH, thickness, RH
+# noprecip - ER, CTH, CBH, thickness, RH
+
 
 
 Precip_Classification <- function(cloud)
 {
+  precip <- cloud[cloud$CBH < 600,]
+  noprecip <- cloud[cloud$CBH > 600,]
   
-  
-  return(list(shallow_precip, shallow_noprecip, congestus_precip, congestus_noprecip))
+  return(list(precip=precip, noprecip=noprecip))
 }
+

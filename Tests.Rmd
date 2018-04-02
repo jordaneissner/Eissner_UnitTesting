@@ -23,27 +23,29 @@ CTH <- c(2600,3750,5500,9050,6000,1550)
 CBH <- c(2000,300,2000,250,400,800)
 
 data <- cbind(CTH,CBH)
+data <- data.frame(data)
 
-h <- Cloud_classification(data)$shallow
-i <- Cloud_classification(data)$congestus
+h <- Cloud_Classification(data)$shallow
+i <- Cloud_Classification(data)$congestus
 
-for (x in h){
-if (x > 4000)
+
+#for (x in h){
+if (nrow(h) == 3)
 {
   print("passed")
 } else
 {
   print("failed")
-}}
+}
 
-for (x in i){
-if (x > 5000 && x < 9000)
+#for (x in i){
+if (nrow(i) == 2)
 {
   print("passed")
 } else
 {
   print("failed")
-}}
+}
 ```
 
 ## Tests for Precip_classification
@@ -55,32 +57,30 @@ source("Precip_classification.R")
  
 ```{r precip_test, echo=TRUE}
 CTH <- c(2600,3750,5500,9050,6000,1550)
-CBH <- c(2000,300,2000,250,400,800)
+CBH <- c(2000,300,2000,250,400,550)
 
 data <- cbind(CTH,CBH)
+data <- data.frame(data)
 
-h <- Precip_classification(data)$shallow_precip
-i <- Precip_classification(data)$shallow_noprecip
-j <- Precip_classification(data)$congestus_precip
-k <- Precip_classification(data)$congestus_noprecip
+h <- Precip_Classification(data)$precip
+i <- Precip_Classification(data)$noprecip
 
-for (x in h){
-if (x < 500)
+
+if (nrow(h) == 4)
 {
   print("passed")
 } else
 {
   print("failed")
-}}
+}
 
-for (x in i){
-if (x > 500)
+if (nrow(i) == 2)
 {
   print("passed")
 } else
 {
   print("failed")
-}}
+}
 ```
  
 
