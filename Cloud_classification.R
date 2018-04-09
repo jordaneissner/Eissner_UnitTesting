@@ -19,10 +19,10 @@ ImportData <- function(file)
   return(data)
 }
 
-Cloud_Classification <- function(data)
+Cloud_Classification <- function(data, CTHmax_s, CTHmin_c, CTHmax_c)
 {
-  shallow <- data[data$CTH < 4000.0,]
-  congestus <- data[data$CTH > 5000 & data$CTH < 9000,]
+  shallow <- data[data$CTH < CTHmax_s,]
+  congestus <- data[data$CTH > CTHmin_c & data$CTH < CTHmax_c,]
   return(list(shallow=shallow, congestus=congestus))
 }
 

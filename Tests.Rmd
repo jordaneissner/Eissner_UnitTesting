@@ -1,8 +1,8 @@
 ---
 title: "Tests"
 author: "Jordan Eissner"
-date: "March 28, 2018"
-output: pdf_document
+date: "April 9, 2018"
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-## Tests for Cloud_classification 
+## Tests for Cloud Classification 
 
 ```{r cloud_class_source, echo=TRUE}
 source("Cloud_classification.R")
@@ -18,16 +18,23 @@ source("Cloud_classification.R")
 
 See if the function is classifying the right clouds
 
+
 ```{r cloud_test, echo=TRUE}
 CTH <- c(2600,3750,5500,9050,6000,1550)
 CBH <- c(2000,300,2000,250,400,800)
 
 data <- cbind(CTH,CBH)
 data <- data.frame(data)
+CTHmax_s <- 4000.0
+CTHmin_c <- 5000.0
+CTHmax_c <- 9000.0
 
-h <- Cloud_Classification(data)$shallow
-i <- Cloud_Classification(data)$congestus
+h <- Cloud_Classification(data, CTHmax_s, CTHmin_c, CTHmax_c)$shallow
+i <- Cloud_Classification(data, CTHmax_s, CTHmin_c, CTHmax_c)$congestus
+```
 
+Shallow
+```{r shallow, echo=T}
 
 #for (x in h){
 if (nrow(h) == 3)
@@ -37,7 +44,11 @@ if (nrow(h) == 3)
 {
   print("failed")
 }
+```
 
+Congestus 
+
+```{r cong, echo=T}
 #for (x in i){
 if (nrow(i) == 2)
 {
@@ -48,7 +59,7 @@ if (nrow(i) == 2)
 }
 ```
 
-## Tests for Precip_classification
+## Tests for Precip Classification
 
 ```{r precip_class_source, echo=TRUE}
 source("Precip_classification.R")
@@ -61,9 +72,15 @@ CBH <- c(2000,300,2000,250,400,550)
 
 data <- cbind(CTH,CBH)
 data <- data.frame(data)
+CBH_thresh <- 600
 
-h <- Precip_Classification(data)$precip
-i <- Precip_Classification(data)$noprecip
+h <- Precip_Classification(data, CBH_thresh)$precip
+i <- Precip_Classification(data, CBH_thresh)$noprecip
+```
+
+Precipitating
+
+```{r precip, echo=T}
 
 
 if (nrow(h) == 4)
@@ -73,7 +90,11 @@ if (nrow(h) == 4)
 {
   print("failed")
 }
+```
 
+Not precipitating 
+
+```{r noprecip, echo=T}
 if (nrow(i) == 2)
 {
   print("passed")
@@ -89,7 +110,7 @@ if (nrow(i) == 2)
 source("Analyze.R")
 ```
 
-### $R^2$
+#### $R^2$
 See if the function is correctly calculating $R^2$ values. 
 
 ```{r analysis_test, echo=TRUE}
@@ -109,9 +130,9 @@ if (R==1)
 ```
 
 
-### T test
+#### T test
 ```{r ttest_source, echo=TRUE}
-source("T-test.R")
+source("T_test.R")
 ```
 
 See if the function is correctly calculating p-values from the t-test.

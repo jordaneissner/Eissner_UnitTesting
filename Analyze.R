@@ -13,7 +13,8 @@
 
 Analyze <- function(x,y)
 {
-  
-  
+  test_model <- lm(x~y)
+  Rsqr <- summary(test_model)$r.squared
   return(Rsqr)
 }
+

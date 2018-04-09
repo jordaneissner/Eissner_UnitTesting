@@ -11,10 +11,10 @@
 
 
 
-Precip_Classification <- function(cloud)
+Precip_Classification <- function(cloud, CBH_thresh)
 {
-  precip <- cloud[cloud$CBH < 600,]
-  noprecip <- cloud[cloud$CBH > 600,]
+  precip <- cloud[cloud$CBH < CBH_thresh,]
+  noprecip <- cloud[cloud$CBH > CBH_thresh,]
   
   return(list(precip=precip, noprecip=noprecip))
 }

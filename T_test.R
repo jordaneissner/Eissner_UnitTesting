@@ -13,7 +13,7 @@
 
 T_test <- function(x,y)
 {
-  
-  
+  test <- t.test(x,y)
+  ttest <- test$p.value
   return(ttest)
 }
