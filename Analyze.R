@@ -10,6 +10,7 @@
 # Rsqr:     The R^2 values of entrainment correlations with each predicted dependency for each regime.
 # If all regimes are run, there should be a total of 8 values outputted. 
 
+#***DAN: these function specs are not precise enough. I do not know what you are talking about. I would not be able to call this function, nor would I know after reading this what it is for.
 
 Analyze <- function(x,y)
 {

@@ -11,6 +11,7 @@
 # shallow - ER, CTH, CBH, thickness, RH
 # congestus - ER, CTH, CBH, thickness, RH
 
+#***DAN: these function specs are not precise enough. I do not know what you are talking about. I would not be able to call this function, nor would I know after reading this what it is for.
 
 ImportData <- function(file)
 {

@@ -7,6 +7,14 @@ output:
     df_print: kable
 ---
 
+<!--***DAN: Search all files for ***DAN for comments-->
+
+<!--***DAN: Proposal.Rmd knitted first time so that's good!-->
+
+<!--***DAN The proposal: One major things that makes it hard to concretely evaluate is the lack of clearly stated questions or hypotheses. Or at least the lack of much along those lines. The only real question comes at the end of the intro: "Do entrainment rates (ER) vary across the two different convective cloud regimes?" Perhaps I am missing something but does this not just require getting the data ready and running a single one-way ANOVA (or analogous non-parametric test)? If that's all that is required, you probably wnt to add a bit to it. Also, it appears the historgram of CTH is not close to bimodal, so there is no sudden difference between the two categories. An ANOVA of EH betwee the categories miht be less statistically appropriate than a regression of EH against CTH, right?-->
+
+<!--***DAN: Overall this is fine, but I think you are selling yourself a bit short by not going for something slightly more ambitious. I suggest amping it up slihtly for the final project. Nevertheless, this is enough to show effort on all parts of the assignment, so for this assignment you get: 10/10-->
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```

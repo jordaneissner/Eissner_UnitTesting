@@ -5,6 +5,19 @@ date: "April 9, 2018"
 output: html_document
 ---
 
+<!--***DAN: search for comments in all doc by searching for ***DAN-->
+
+<!--***DAN: There was a commit in which you had tests and function specs, as requested, but it did not have a tag "halfway". You could have added it with "git tag halfway" that time. -->
+
+<!--***DAN: That said the state of the repo was correct once I found the right sha tag, so that's good.-->
+
+<!--***DAN: The function specs are not precise enough for me to actually see what these functions are and how to call them.-->
+
+<!--***DAN: The tests look good, I think you definitely got the idea there!-->
+
+<!--***DAN: Tests.Rmd knitted first try!-->
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
